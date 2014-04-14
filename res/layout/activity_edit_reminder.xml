@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#D0D0D0"
+    android:orientation="vertical" 
+    android:id ="@+id/linearLayout1">
+    
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+         android:background="#FFFFFF"  
+         android:layout_below="@+id/linearLayout1">
+ 
+
+        
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="52dp"
+            android:layout_toRightOf="@+id/appImg"
+            android:text=" Edit Reminder "
+            android:textColor="#000000"
+            android:textSize="25dp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/homeImg"
+            android:layout_width="50dp"
+            android:layout_height="52dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:onClick="callHomeActivity"
+            android:src="@drawable/home" />
+
+</RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginRight="0dp"
+        android:layout_marginTop="0dp"
+        android:background="#202020" >
+
+        <EditText
+            android:id="@+id/shortDesc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="14dp"
+            android:ems="10"
+             
+              android:inputType="textPersonName|textCapSentences"
+            android:hint="Enter a short desc abt reminder" />
+        
+        <EditText
+            android:id="@+id/detailedDesc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            
+            android:layout_alignLeft="@+id/shortDesc"
+            android:layout_below="@+id/shortDesc"
+            
+            android:layout_marginTop="28dp"
+            android:ems="10"
+            android:hint="Give detailed desc here 1 or more lines"
+            android:inputType="textMultiLine|textCapSentences" />
+
+        <CheckBox
+            android:id="@+id/remDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/detailedDesc"
+            android:layout_marginTop="30dp"
+            android:checked="@bool/chkstate"
+               android:focusable="true"
+android:focusableInTouchMode="false"
+            android:onClick="getAlarmTime"
+            android:text="Set Alarm" />
+
+        <Spinner
+            android:id="@+id/remType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/remDate"
+            android:layout_marginTop="15dp"
+            android:entries="@array/str_arr_repeat_type"
+            android:prompt="@string/str_repeat" />
+
+        <Button
+            android:id="@+id/Delete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/remType"
+            android:layout_marginLeft="67dp"
+            android:layout_marginTop="27dp"
+            android:layout_toRightOf="@+id/Edit"
+            android:onClick="deleteReminder"
+            android:text="Delete" />
+
+        <Button
+            android:id="@+id/Edit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/Delete"
+            android:layout_alignBottom="@+id/Delete"
+            android:layout_alignRight="@+id/remDate"
+            android:onClick="editReminder"
+            android:text="Edit" />
+
+    </RelativeLayout>
+
+</LinearLayout>
+
+ 
